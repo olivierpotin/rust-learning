@@ -1,0 +1,9 @@
+[package]
+name = "zoho_web_api"
+version = "0.1.0"
+authors = ["Olivier Potin <olivier.potin83@gmail.com>"]
+
+[dependencies]
+hyper = "0.11.1"
+futures = "0.1"
+tokio-core = "0.1"
