@@ -1,4 +1,43 @@
 
+
+---------------------------------------------
+--- Some interesting info from my errands ---
+---------------------------------------------
+*******************************************************************************
+http://httpbin.org/
+httpbin(1): HTTP Request & Response Service
+Freely hosted in HTTP, HTTPS, & EU flavors by Kenneth Reitz & Runscope.
+
+DESCRIPTION
+Testing an HTTP Library can become difficult sometimes. RequestBin is fantastic
+for testing POST requests, but doesn't let you control the response.
+This exists to cover all kinds of HTTP scenarios. Additional endpoints are
+being considered.
+
+All endpoint responses are JSON-encoded.
+
+*******************************************************************************
+https://crates.io/
+The Rust community's crate host
+
+Look for a name
+e.g. hyper: a modem HTTP library
+gives pointers to Homepage, Documentation as well as Repository
+We can also log in with GitHub account
+
+*******************************************************************************
+hyper: Fast and safe HTTP for the Rust language
+It is fully written in Rust
+low-level type-safe abstraction over raw HTTP
+Hyper offers both an HTTP client and server which can be used to drive complex
+web applications written entirely in Rust
+
+
+
+
+-----------------------------------------
+--- LEARNING RUST USING THE RUST BOOK ---
+-----------------------------------------
 https://doc.rust-lang.org/book/second-edition/ch01-01-installation.html
 
 
@@ -9,10 +48,10 @@ curl https://sh.rustup.rs -sSf | sh
 
 Welcome to Rust!
 
-This will download and install the official compiler for the Rust programming 
+This will download and install the official compiler for the Rust programming
 language, and its package manager, Cargo.
 
-It will add the cargo, rustc, rustup and other commands to Cargo's bin 
+It will add the cargo, rustc, rustup and other commands to Cargo's bin
 directory, located at:
 
   /Users/olivierpotin/.cargo/bin
@@ -39,13 +78,13 @@ Current installation options:
 info: syncing channel updates for 'stable-x86_64-apple-darwin'
 info: latest update on 2017-06-08, rust version 1.18.0 (03fc9d622 2017-06-06)
 info: downloading component 'rustc'
- 37.8 MiB /  37.8 MiB (100 %) 521.6 KiB/s ETA:   0 s                
+ 37.8 MiB /  37.8 MiB (100 %) 521.6 KiB/s ETA:   0 s
 info: downloading component 'rust-std'
- 53.8 MiB /  53.8 MiB (100 %) 569.6 KiB/s ETA:   0 s                
+ 53.8 MiB /  53.8 MiB (100 %) 569.6 KiB/s ETA:   0 s
 info: downloading component 'cargo'
-  3.6 MiB /   3.6 MiB (100 %) 572.1 KiB/s ETA:   0 s                
+  3.6 MiB /   3.6 MiB (100 %) 572.1 KiB/s ETA:   0 s
 info: downloading component 'rust-docs'
- 11.4 MiB /  11.4 MiB (100 %) 569.6 KiB/s ETA:   0 s                
+ 11.4 MiB /  11.4 MiB (100 %) 569.6 KiB/s ETA:   0 s
 info: installing component 'rustc'
 info: installing component 'rust-std'
 info: installing component 'cargo'
@@ -57,13 +96,15 @@ info: default toolchain set to 'stable'
 
 Rust is installed now. Great!
 
-To get started you need Cargo's bin directory ($HOME/.cargo/bin) in your PATH 
+To get started you need Cargo's bin directory ($HOME/.cargo/bin) in your PATH
 environment variable. Next time you log in this will be done automatically.
 
 To configure your current shell run source $HOME/.cargo/env
 
 Updating
-Once you have Rust installed, updating to the latest version is easy. From your shell, run the update script:
+Once you have Rust installed, updating to the latest version is easy.
+From your shell, run the update script:
+
 $ rustup update
 macbook-pro-de-olivier-1:Rust olivierpotin$ rustup update
 info: syncing channel updates for 'stable-x86_64-apple-darwin'
@@ -73,12 +114,14 @@ info: checking for self-updates
 
 Local documentation
 
-The installer also includes a copy of the documentation locally, so you can read it offline. Run rustup doc to open the local documentation in your browser.
+The installer also includes a copy of the documentation locally, so you can
+read it offline. Run rustup doc to open the local documentation in your browser.
 
 
 Now looking at CARGO:
 ---------------------
-Cargo is Rust’s build system and package manager, and Rustaceans use Cargo to manage their Rust projects because it makes a lot of tasks easier.
+Cargo is Rust’s build system and package manager, and Rustaceans use Cargo to
+manage their Rust projects because it makes a lot of tasks easier.
 - builds code
 - download the libraries the code depends on (manage dependencies)
 - build those libraries
@@ -90,7 +133,9 @@ $ cargo new hello_cargo --bin
 $ cd hello_cargo
 
 Cargo.toml
-This file is in the TOML (Tom's Obvious, Minimal Language) format. TOML is similar to INI but has some extra goodies and is used as Cargo’s configuration format.
+This file is in the TOML (Tom's Obvious, Minimal Language) format.
+TOML is similar to INI but has some extra goodies and is used as Cargo’s
+configuration format.
 
 [package]
 name = "hello_cargo"
@@ -99,9 +144,15 @@ authors = ["Your Name <you@example.com>"]
 
 [dependencies]
 
-The last line, [dependencies], is the start of a section for you to list any crates (which is what we call packages of Rust code) that your project will depend on so that Cargo knows to download and compile those too. 
+The last line, [dependencies], is the start of a section for you to list any
+crates (which is what we call packages of Rust code) that your project will
+depend on so that Cargo knows to download and compile those too.
 
-Cargo expects your source files to live inside the src directory so that the top-level project directory is just for READMEs, license information, configuration files, and anything else not related to your code. In this way, using Cargo helps you keep your projects nice and tidy. There's a place for everything, and everything is in its place.
+Cargo expects your source files to live inside the src directory so that the
+top-level project directory is just for READMEs, license information,
+configuration files, and anything else not related to your code. In this way,
+using Cargo helps you keep your projects nice and tidy.
+There's a place for everything, and everything is in its place.
 
 Building and Running a Cargo Project
 
@@ -110,4 +161,8 @@ macbook-pro-de-olivier-1:hello_cargo olivierpotin$ cargo run
      Running `target/debug/hello_cargo`
 Hello, world!
 
-The other advantage of using Cargo is that the commands are the same no matter what operating system you're on, so at this point we will no longer be providing specific instructions for Linux and Mac versus Windows.
+The other advantage of using Cargo is that the commands are the same no matter
+what operating system you're on, so at this point we will no longer be
+providing specific instructions for Linux and Mac versus Windows.
+
+
